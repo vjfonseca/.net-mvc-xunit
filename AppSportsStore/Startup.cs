@@ -19,17 +19,16 @@ namespace AppSportsStore
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public Startup(IConfiguration config)
         {
-
+            Configuration = config;
         }
         private IConfiguration Configuration { get; set; }
-
 
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
             services.AddDbContext<StoreDbContext>(opts =>
             {
-                opts.UseSqlServer(Configuration["ConnectionStrings:SportsStoreConnection"]);
+                opts.UseSqlServer(Configuration.GetConnectionString("SportsStoreConnection"));
             });
             services.AddScoped<IStoreRepo, EFStoreRepo>();
         }
