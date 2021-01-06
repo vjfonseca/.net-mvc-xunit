@@ -1,6 +1,5 @@
 using System;
 using Xunit;
-using AppSportsStore.Models;
 
 namespace SportsStore.Tests
 {
