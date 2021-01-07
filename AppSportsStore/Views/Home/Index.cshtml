@@ -1,1 +1,6 @@
+@using AppSportsStore.Models 
 <h4>Welcome to SportsStore</h4>
+@foreach (var Prod in Model)
+{
+    <li>@Prod.Price</li>
+}
