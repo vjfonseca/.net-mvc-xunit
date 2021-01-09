@@ -36,22 +36,7 @@ namespace SportsStore.Tests
             //When
             var model = (controller.Index() as ViewResult)?.ViewData.Model as IEnumerable<Product>;
             //Then
-            Assert.DoesNotContain(model, x => x.Price <= 100);
-        }
-        [Fact]
-        public void DuplicateId()
-        {
-            //Given
-            var mock = new Mock<IStoreRepo>();
-            mock.SetupGet(x => x.Products).Returns(SeedData.GetData());
-            var controller = new HomeController(mock.Object);
-            //When
-            var model = (controller.Index() as ViewResult)?.ViewData.Model as IEnumerable<Product>;
-            //Then
-            foreach(var prod in model)
-            {
-                Assert.NotEqual();
-            }
+            Assert.DoesNotContain(model, x => x.Price <= 0);
         }
     }
 }
