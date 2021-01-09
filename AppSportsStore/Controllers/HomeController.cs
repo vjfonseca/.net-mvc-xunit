@@ -1,3 +1,4 @@
+using System.Linq;
 using AppSportsStore.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,6 +7,7 @@ namespace AppSportsStore.Controllers
     public class HomeController : Controller
     {
         public IStoreRepo repo { get; set; }
+        public int PageSize { get; } = 0;
         public HomeController(IStoreRepo _repo)
         {
             repo = _repo;
@@ -19,9 +21,8 @@ namespace AppSportsStore.Controllers
         }
         public IActionResult ProductsPagination(int page = 1)
         {
-            // return View()
-            //int pageSize = 4;
-            return null;
+            return View(repo.Products.Skip((page - 1) * PageSize)
+                                     .Take(PageSize));
         }
     }
 }

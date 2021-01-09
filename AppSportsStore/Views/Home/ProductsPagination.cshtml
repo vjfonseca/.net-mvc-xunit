@@ -1,2 +1,8 @@
-@using AppSportsStore.Models
-<h1>FAZER PAGINAÇÃO</h1>
+@using AppSportsStore.Models 
+<h4>Welcome to SportsStore</h4>
+@foreach (var p in Model)
+{
+    <li>@p.Name</li>
+    <li>@p.Price</li>
+    <li>@p.ProductID</li>
+}
