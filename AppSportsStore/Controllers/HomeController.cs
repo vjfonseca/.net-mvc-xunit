@@ -7,7 +7,7 @@ namespace AppSportsStore.Controllers
     public class HomeController : Controller
     {
         public IStoreRepo repo { get; set; }
-        public int PageSize { get; } = 0;
+        public int PageSize { get; } = 3;
         public HomeController(IStoreRepo _repo)
         {
             repo = _repo;
