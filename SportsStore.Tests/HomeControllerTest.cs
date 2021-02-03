@@ -2,10 +2,13 @@ using Xunit;
 using Moq;
 using AppSportsStore.Controllers;
 using AppSportsStore.Models;
-using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using AppSportsStore.Infrastructure;
+using AppSportsStore.Models.ViewModels;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SportsStore.Tests
 {
